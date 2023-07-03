@@ -1,0 +1,37 @@
+﻿@model IEnumerable<BookStoreWeb.Models.Sach>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<div class="row">
+    @foreach (var book in Model)
+    {
+    <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+            <a href="@Url.Action("Details", "BookStore", new {id = book.MaSach})"></a>
+                <img alt="@book.TenSach" src="~/images/@book.AnhBia" width="100">
+
+                <div>
+                    <br />
+                    <h4 style="text-align:center">
+                        @book.TenSach
+                    </h4>
+                    <p></p>
+                    <div class="ratings">
+                        <p class="pull-right">15 reviews</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    }
+</div>
+
