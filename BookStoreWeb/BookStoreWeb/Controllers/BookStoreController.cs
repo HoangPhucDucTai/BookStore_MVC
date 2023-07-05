@@ -39,5 +39,18 @@ namespace BookStoreWeb.Controllers
             var publisher = from pbs in data.NhaXuatBans select pbs;
             return PartialView(publisher);
         }
+        // Sản phẩm sách theo chủ đề
+        public ActionResult TopicName(int id)
+        {
+            var book = from b in data.Saches where b.MaChuDe == id select b;
+            return View(book);
+        }
+        //sản phẩm sách theo nhà xuất bản
+        public ActionResult PublisherName(int id)
+        {
+            var book = from b in data.Saches where b.MaNXB == id select b;
+            return View(book);
+        }
+
     }
 }
