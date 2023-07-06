@@ -223,8 +223,9 @@
     <Content Include="Views\BookStore\Index.cshtml" />
     <Content Include="Views\BookStore\Topic.cshtml" />
     <Content Include="Views\BookStore\Publisher.cshtml" />
-    <Content Include="Views\BookStore\TopicName.cshtml" />
     <Content Include="Views\BookStore\PublisherName.cshtml" />
+    <Content Include="Views\BookStore\TopicName.cshtml" />
+    <Content Include="Views\BookStore\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -51,6 +51,12 @@ namespace BookStoreWeb.Controllers
             var book = from b in data.Saches where b.MaNXB == id select b;
             return View(book);
         }
+        //chi tiết sản phẩm (sách)
+        public ActionResult Details(int id)
+        {
+            var book = from b in data.Saches where b.MaSach == id select b;
+            return View(book.Single());
+        }
 
     }
 }
