@@ -1,10 +1,9 @@
 ﻿@model IEnumerable<BookStoreWeb.Models.Sach>
-
 @{
     ViewBag.Title = "Sách theo chủ đề";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
-<h3 style="text-align:center; color:red">SÁCH THEO CHỦ ĐỀ</h3>
+<h3 style="text-align: center; color: crimson; margin-bottom: 25px">SÁCH THEO CHỦ ĐỀ</h3>
 
 <div class="row">
     @foreach (var book in Model)
@@ -29,9 +28,34 @@
                             <span class="glyphicon glyphicon-star"></span>
                             <span class="glyphicon glyphicon-star"></span>
                         </p>
+                        <div id="Chitetsp">
+                            @Html.ActionLink("Chi tiết sản phẩm", "Details", new { id = book.MaSach })
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
     }
 </div>
+@*css nút chi tiết sản phẩm*@
+<style type2="text/css">
+    #Chitetsp a {
+        clear: both;
+        background-color: black;
+        color: white;
+        width: 120px;
+        height: 35px;
+        display: block;
+        text-align: center;
+        padding-top: 10px;
+        text-decoration: none;
+        border-radius: 3px;
+    }
+
+        #Chitetsp a:hover {
+            background-color: #5a5e60;
+            color: white;
+            cursor: pointer;
+        }
+</style>

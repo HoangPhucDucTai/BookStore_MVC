@@ -1,21 +1,22 @@
-﻿@model IEnumerable<BookStoreWeb.Models.Sach>
+﻿@using BookStoreWeb.Models
+@model IEnumerable<BookStoreWeb.Models.Sach>
 @{
     ViewBag.Title = "Trang chủ";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
-<h3 style="text-align:center; color:red">SÁCH MỚI</h3>
+<h3 style="text-align:center; color:crimson; margin-bottom:25px">SÁCH MỚI</h3>
 <div class="row">
     @foreach (var book in Model)
     {
-    <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail">
-            <a href="@Url.Action("Details", "BookStore", new {id = book.MaSach})"></a>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <a href="@Url.Action("Details", "BookStore", new {id = book.MaSach})"></a>
                 <img alt="@book.TenSach" src="~/images/@book.AnhBia" width="100">
 
                 <div>
                     <br />
-                    <h4 style="text-align:center">
+                    <h4 style="text-align:center; font-size:17px;">
                         @book.TenSach
                     </h4>
                     <p></p>
@@ -28,10 +29,36 @@
                             <span class="glyphicon glyphicon-star"></span>
                             <span class="glyphicon glyphicon-star"></span>
                         </p>
+                        <div id="Chitetsp">
+                            @Html.ActionLink("Chi tiết sản phẩm", "Details", new { id = book.MaSach })     
+                        </div>
                     </div>
+                    @*<button >@Html.ActionLink("Chi tiết sản phẩm", "Details", new { id = book.MaSach })</button>*@ 
                 </div>
+            </div>
         </div>
-    </div>
-    }
+      }
 </div>
+@*css nút chi tiết sản phẩm*@
+<style type2="text/css">
+    #Chitetsp a {
+        clear: both;
+        background-color: black;
+        color: white;
+        width: 120px;
+        height: 35px;
+        display: block;
+        
+        text-align: center;
+        padding-top: 10px;
+        text-decoration: none;
+        border-radius: 3px;
+        
+    }
 
+        #Chitetsp a:hover {
+            background-color: #5a5e60;
+            color: white;
+            cursor: pointer;
+        }
+</style>

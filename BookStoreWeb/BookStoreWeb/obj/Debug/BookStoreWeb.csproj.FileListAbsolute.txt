@@ -53,3 +53,8 @@ D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\obj\Debug\Boo
 D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\obj\Debug\BookStoreWeb.csproj.CopyComplete
 D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\obj\Debug\BookStoreWeb.dll
 D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\obj\Debug\BookStoreWeb.pdb
+D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\bin\Microsoft.Practices.ServiceLocation.dll
+D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\bin\XAct.Core.PCL.dll
+D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\bin\Microsoft.Practices.ServiceLocation.pdb
+D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\bin\Microsoft.Practices.ServiceLocation.xml
+D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\obj\Debug\BookStoreWeb.csproj.AssemblyReference.cache
