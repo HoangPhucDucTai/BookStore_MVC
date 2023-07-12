@@ -1,0 +1,49 @@
+﻿@*css nút đặt mua sản phẩm*@
+<style type1="text/css">
+    #Datmua a {
+        clear: both;
+        background-color: crimson;
+        color: white;
+        width: 120px;
+        height: 35px;
+        display: block;
+        float: right;
+        text-align: center;
+        padding-top: 8px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        #Datmua a:hover {
+            background-color: #5a5e60;
+            color: white;
+            cursor: pointer;
+        }
+</style>
+@{
+    ViewBag.Title = "Chi tiết sản phẩm";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h3 style="color:crimson">THÔNG TIN CHI TIẾT SÁCH</h3>
+<div>
+    <div style="width:40%; float:left; border-left:dotted 1px; border-color:azure">
+        <img src="~/images/@Model.AnhBia" width="100%"/>
+    </div>
+
+    <div style="width:60%; float:left; padding:10px">
+        <h4 style="font-weight:bold; color:crimson ; text-transform: uppercase">Tên sách: @Model.TenSach</h4>
+        <p style="text-align:justify"><span style="font-weight:bold">Mô tả: </span>@Model.MoTa</p>
+        <p style="font-weight:bold">Giá bán: <span style="color:crimson; font-size:16pt">@Model.GiaBan VNĐ</span></p>
+    </div>
+    </div>
+        <div id="Datmua">
+            <a href="@Url.Action("AddToCard", "ShoppingCard", new { id = Model.MaSach })" class="list-group-item">
+                Đặt mua
+            </a>
+</div>
+        <div>
+</div>
+
+
+
