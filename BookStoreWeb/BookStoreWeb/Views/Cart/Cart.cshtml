@@ -1,0 +1,33 @@
+﻿@using BookStoreWeb.Models
+@model List<Cart>
+@{
+    ViewBag.Title = "Giỏ hàng";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<h3 style="color:crimson; text-align:center;">THÔNG TIN GIỎ HÀNG</h3>
+
+<table align="center" border="1">
+    <tr style="text-align: center; font-weight:bold">
+        <td>Mã sách</td>
+        <td>Tên sách</td>
+        <td>Ảnh bìa</td>
+        <td>Số lượng</td>
+        <td>Đơn giá</td>
+        <td>Thành tiền</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr style="text-align:center; font-weight:bold">
+            <td>@item.iMaSach</td>
+            <td>@item.sTenSach</td>
+            <td><img style="width: 25%" src="~/images/@item.sAnhBia"></td>
+            <td>@item.iSoLuong</td>
+            <td>@String.Format("{0:0,0}", item.dDonGia)</td>
+            <td>@String.Format("{0:0,0}", item.dThanhTien)</td>
+        </tr>
+    }
+    <tr style="font-weight:bold; text-align:right; color:crimson">
+        <td colspan="3"> Số lượng sách: @ViewBag.Quantity</td>
+        <td colspan="3"> Tổng tiền: @String.Format("{0:0,0}", ViewBag.TotalFunds) VNĐ </td>
+    </tr>
+</table>

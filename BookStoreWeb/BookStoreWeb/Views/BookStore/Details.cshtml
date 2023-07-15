@@ -38,7 +38,7 @@
     </div>
     </div>
         <div id="Datmua">
-            <a href="@Url.Action("AddToCard", "ShoppingCard", new { id = Model.MaSach })" class="list-group-item">
+            <a href="@Url.Action("AddToCart", "Cart", new {@iMaSach = Model.MaSach, @strURL = Request.Url.ToString()})" class="list-group-item">
                 Đặt mua
             </a>
 </div>

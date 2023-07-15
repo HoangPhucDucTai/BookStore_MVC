@@ -27,14 +27,14 @@ namespace BookStoreWeb.Controllers
         public ActionResult Register (FormCollection collection, KhachHang kh)
         {
             // gán các giá trị người dùng nhập cho các biến
-            var fullname = collection["HoTenKH"];
+            var fullname = collection["HoTenKhacHang"];
             var username = collection["TenDangNhap"];
             var password = collection["MatKhau"];
             var retypepassword = collection["NhapLaiMatKhau"];
             var address = collection["DiaChi"];
             var email = collection["Email"];
-            var phone = collection["SoDienThoai"];
-            var dateofbirth = String.Format("{0:MM/dd/yyyy}", collection["Ngaysinh"]);
+            var phone = collection["DienThoai"];
+            var dateofbirth = String.Format("{0:MM/dd/yyyy}", collection["NgaySinh"]);
 
             if (String.IsNullOrEmpty(fullname))
             {
@@ -73,7 +73,7 @@ namespace BookStoreWeb.Controllers
                 db.KhachHangs.InsertOnSubmit(kh);
                 db.SubmitChanges();
 
-                return RedirectToAction("Dangnhap");
+                return RedirectToAction("DangNhap");
             }
             return this.Register();
         }
@@ -109,7 +109,7 @@ namespace BookStoreWeb.Controllers
                     return RedirectToAction("Index", "BookStore");
                 }
                 else
-                    ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
+                    ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng !";
             }
             return View();
         }

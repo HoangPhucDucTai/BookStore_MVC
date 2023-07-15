@@ -40,13 +40,16 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        @Html.ActionLink("TRANG CHỦ" , "Index", "BookStore")
+                        @Html.ActionLink("TRANG CHỦ", "Index", "BookStore")
                     </li>
                     <li>
                         @Html.ActionLink("ĐĂNG KÍ TÀI KHOẢN", "Register", "User")
                     </li>
                     <li>
                         @Html.ActionLink("ĐĂNG NHẬP", "Login", "User")
+                    </li>
+                    <li>
+                        @Html.Action("CartPartial", "Cart")
                     </li>
                 </ul>
             </div>
