@@ -84,5 +84,36 @@ namespace BookStoreWeb.Controllers
             ViewBag.TotalFunds = TotalFunds();
             return PartialView();
         }
+        //delete cart 
+        public ActionResult DeleteCart(int iMaSanPham)
+        {
+            //lay cart tu session
+            List<Cart> lstCart = TakeList();
+            //check sach xem da co trong cart chua
+            Cart product = lstCart.SingleOrDefault(n => n.iMaSach == iMaSanPham);
+            if (product != null)
+            {
+                lstCart.RemoveAll(n => n.iMaSach == iMaSanPham);
+                return RedirectToAction("Cart");
+            }
+            if (lstCart.Count == 0)
+            {
+                return RedirectToAction("Index", "BookStore");
+            }
+            return RedirectToAction("Cart");
+        }
+        //update cart
+        public ActionResult UpdateCart(int iMaSanPham, FormCollection f)
+        {
+            //lay cart tu session
+            List<Cart> lstCart = TakeList();
+            //check sach xem da co trong cart chua
+            Cart product = lstCart.SingleOrDefault(n => n.iMaSach == iMaSanPham);
+            if (product != null)
+            {
+                product.iSoLuong = int.Parse(f["txtSoLuong"].ToString());
+            }
+            return RedirectToAction("Cart");
+        }
     }
 }

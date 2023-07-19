@@ -14,20 +14,32 @@
         <td>Số lượng</td>
         <td>Đơn giá</td>
         <td>Thành tiền</td>
+        <td width="50px"></td>
+        <td width="50px"></td>
+        <td width="50px"></td>
     </tr>
     @foreach (var item in Model)
     {
         <tr style="text-align:center; font-weight:bold">
             <td>@item.iMaSach</td>
             <td>@item.sTenSach</td>
-            <td><img style="width: 25%" src="~/images/@item.sAnhBia"></td>
-            <td>@item.iSoLuong</td>
-            <td>@String.Format("{0:0,0}", item.dDonGia)</td>
-            <td>@String.Format("{0:0,0}", item.dThanhTien)</td>
+            <td><img style="width: 35%" src="~/images/@item.sAnhBia"></td>
+
+            @using(Html.BeginForm("UpdateCart", "Cart", new { @iMaSanPham = item.iMaSach}))
+            {
+                <td>
+                    <input type=" number" min="1" name="txtSoLuong" value="@item.iSoLuong" style="background-color:darkgray; text-align:center" />
+                </td>
+                <td>@String.Format("{0:0,0}", item.dDonGia)</td>
+                <td>@String.Format("{0:0,0}", item.dThanhTien)</td>
+                <td><a href="@Url.Action("Details", "BookStore", new { id = item.iMaSach})">Chi tiết</a> </td>
+                <td>@Html.ActionLink("Xóa sản phẩm", "DeleteCart", new { @iMaSanPham = item.iMaSach})</td>
+                <td><input type="submit" value="Cập nhật"/></td>
+            }
         </tr>
     }
-    <tr style="font-weight:bold; text-align:right; color:crimson">
-        <td colspan="3"> Số lượng sách: @ViewBag.Quantity</td>
-        <td colspan="3"> Tổng tiền: @String.Format("{0:0,0}", ViewBag.TotalFunds) VNĐ </td>
+    <tr style="font-weight:bold; text-align:center; color:crimson">
+        <td colspan="4"> Số lượng sách: @ViewBag.Quantity</td>
+        <td colspan="5"> Tổng tiền: @String.Format("{0:0,0}", ViewBag.TotalFunds) VNĐ </td>
     </tr>
 </table>

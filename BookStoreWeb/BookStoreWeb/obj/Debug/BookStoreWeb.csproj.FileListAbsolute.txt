@@ -57,4 +57,3 @@ D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\bin\Microsoft
 D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\bin\XAct.Core.PCL.dll
 D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\bin\Microsoft.Practices.ServiceLocation.pdb
 D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\bin\Microsoft.Practices.ServiceLocation.xml
-D:\TaiLieu\aspdotnet_mvc\BookStoreWebMVC\BookStoreWeb\BookStoreWeb\obj\Debug\BookStoreWeb.csproj.AssemblyReference.cache
